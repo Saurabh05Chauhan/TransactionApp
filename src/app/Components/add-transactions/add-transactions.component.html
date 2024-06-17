@@ -1,0 +1,35 @@
+<div class="container">
+    <h1>New Transaction</h1>
+    <form ngform="transform" (submit)="onSubmit($event)">
+
+        <div class="row">
+            <div class="col">
+                <label for="TransactionType">Transaction Type</label>
+            </div>
+            
+            <select class="form-control" name="TransactionType" id="TransactionType" [(ngModel)]="transactionType" (selectionchange)="onChange($event)">
+                <option value="Credit">Credit</option>
+                <option value="Debit">Debit</option>
+            </select>
+        </div>
+        
+        <div class="row">
+            <div class="col">
+                <label for="Amount">Amount</label>
+            </div>
+            <input type="text" [(ngModel)]="amount" class="form-control" name="amount" id="amount">
+        </div>
+        
+        <div class="row">
+            <div class="col">
+                <label for="Description">Description</label>
+            </div>
+            <input type="text" class="form-control" [(ngModel)]="description" name="description" id="description">
+
+        </div>
+
+        
+
+        <button class=" btn btn-primary"type="submit">Save</button>
+    </form>
+</div>
